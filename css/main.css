@@ -1,0 +1,152 @@
+nav a{
+	width: 100%;
+
+}
+/* 
+
+*/
+
+article {
+	background-color: #F0FFFF;
+	text-align: left;
+	margin: 1rem 0; 
+	padding: 2rem; 
+	
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+article label{
+	color: black;
+}
+article input{
+	border: none;
+}
+article input:active{
+	border: none;
+		text-decoration: none;
+
+}
+article #username{
+	border: 1px solid #E0E0E0;
+}
+article #title{
+	border: 1px solid #E0E0E0;
+}
+
+nav a, nav a:visited {
+	display: inline-block;
+	background-color: blue;
+	color: black;
+	padding: 1em 1.25em;
+	text-decoration: none;
+	-webkit-transition: background-color 0.5s;
+	transition: background-color 0.5s;
+}
+
+
+nav a.green {
+	background-color: green;
+}
+
+
+nav a.orange {
+	background-color: orange;
+}
+
+nav a.blue {
+	background-color: blue;
+}
+
+nav a.josh {
+	background-color: transparent;
+	color:white;
+
+
+
+}
+ 
+
+
+nav a:hover, nav a:active, nav a:focus {
+	background-color: gray;
+	color: white;
+	opacity:1;
+}
+
+
+body {
+	background-color: #013E7F;
+	background-image: url("../images/canucksBackground.jpg");
+	background-size: 100%;
+	 background-attachment: fixed;
+	background-repeat: no-repeat;
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 1em; 
+	color: black;
+	padding: 1em;
+
+}
+
+
+h1 {
+	font-size: 2.5rem; 
+}
+
+
+h2 {
+	font-weight: normal;
+	font-size: 2rem; 
+}
+
+
+h2 a {
+	
+}
+
+
+
+
+p, ul, ol {
+	font-size: 1rem;
+	line-height: 1.3em; 
+}
+
+
+img {
+	height: auto; 
+	width: auto;
+	max-width: 100%;
+	border: 1px solid #888888; 
+}
+
+
+figure {
+	margin-left: 0;
+}
+
+
+figcaption {
+	font-size: 0.8rem;
+	font-style: italic;
+}
+
+fieldset {
+	color: white;
+}
+
+
+a {
+	color: #007FFF; 
+}
+
+
+a:visited {
+	color: black;
+}
+
+
+a:active, a:hover {
+	color: #888888; 
+	text-decoration: none;
+}
