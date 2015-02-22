@@ -35,6 +35,20 @@
 			padding: 1em 1em 2em 1em;
 			overflow-y: hidden;
 		}
+
+		#drop2{
+			position: absolute;
+			top: 100px;
+			left: 300px;
+			width: 200px;
+			height: 200px;
+			border: 4px dashed white;
+			-webkit-box-sizing: border-box; 
+			-moz-box-sizing: border-box;   
+			box-sizing: border-box;     			
+			padding: 1em 1em 2em 1em;
+			overflow-y: hidden;
+		}
 		.dragable-item{
 			
 			width: 100px;
@@ -75,6 +89,9 @@
 
 <div id="drop">
 	<div id="output"></div>
+</div>
+<div id="drop2">
+	<div id="output2"></div>
 </div>
 
 <div id="total-costs">
@@ -118,7 +135,7 @@ $(document).ready(function() {
 		refresh_total_costs(total_costs);
 		
 		// Get the #drop zone
-		var drop = document.getElementById('drop');
+		var drop = document.getElementById('drop','drop2');
 		
 		var draggedItem = null;
 		
@@ -137,6 +154,7 @@ $(document).ready(function() {
 		drop.addEventListener('dragenter', cancel);
 		
 		drop.addEventListener('drop', function (e) {
+
 		  
 		   e.preventDefault();	
 		  
