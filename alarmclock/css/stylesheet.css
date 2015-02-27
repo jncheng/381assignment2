@@ -1,0 +1,101 @@
+body { margin: 0px; overflow: hidden; }
+		canvas { border: 1px solid black; }
+
+		html{
+			font-size:10px;
+		}
+		body{
+			font-size:2rem;
+			font-family: 'Lato', sans-serif;
+			font-size: 300;
+			-webkit-font-smoothing: antialiased;
+			background: #3498db;
+			color: white;
+			padding: 0 2em;
+		}
+		h1{
+			font-size: 2em;
+			font-weight: 300;
+		}
+		#drop{
+			width: 200px;
+			height: 200px;
+			border: 4px dashed white;
+			-webkit-box-sizing: border-box; 
+			-moz-box-sizing: border-box;   
+			box-sizing: border-box;     			
+			padding: 1em 1em 2em 1em;
+			overflow-y: hidden;
+		}
+
+		#drop2{
+			position: absolute;
+			top: 100px;
+			left: 300px;
+			width: 200px;
+			height: 200px;
+			border: 4px dashed white;
+			-webkit-box-sizing: border-box; 
+			-moz-box-sizing: border-box;   
+			box-sizing: border-box;     			
+			padding: 1em 1em 2em 1em;
+			overflow-y: hidden;
+		}
+		#drop3{
+			position: absolute;
+			top: 100px;
+			left: 600px;
+			width: 200px;
+			height: 200px;
+			border: 4px dashed white;
+			-webkit-box-sizing: border-box; 
+			-moz-box-sizing: border-box;   
+			box-sizing: border-box;     			
+			padding: 1em 1em 2em 1em;
+			overflow-y: hidden;
+		}
+		#drop4{
+			position: absolute;
+			top: 100px;
+			left: 900px;
+			width: 200px;
+			height: 200px;
+			border: 4px dashed white;
+			-webkit-box-sizing: border-box; 
+			-moz-box-sizing: border-box;   
+			box-sizing: border-box;     			
+			padding: 1em 1em 2em 1em;
+			overflow-y: hidden;
+		}
+		.dragable-item{
+			
+			width: 100px;
+			height: 100px;
+			background: #34495e;
+			margin: 1em;
+			text-align: center;		
+			-webkit-box-sizing: border-box; 
+			-moz-box-sizing: border-box;   
+			box-sizing: border-box;     
+			padding: 1em;
+			float: left;			
+		}
+		#total-costs{
+			padding: 1em 0 0 0;
+		}
+		a{
+			clear: both;
+			color: white;
+			text-decoration: none;
+			padding-top: 1em;
+			display: block;
+		}
+		a:hover{
+			color: #ecf0f1;
+		}
+		
+		*[draggable=true] {
+		  -moz-user-select:none;
+		  -khtml-user-drag: element;
+		  cursor: move;
+		}

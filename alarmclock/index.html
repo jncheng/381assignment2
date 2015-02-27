@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Calculator test</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+	<style>
+		
+		
+		
+	</style>
+	<script src="js/jquery.min.js"></script>
+
+	<script src="js/canvas.js"></script>
+	<script src="js/getTime.js"></script>
+	<script src="js/dragTime.js"></script>
+
+	<!-- 
+	<script type="text/javascript">
+	var canvas;
+	var ctx;
+	var w = 0;
+	var h = 0;
+	var timer;
+	var updateStarted = false;
+	var touches = [];
+	function update() {
+		if (updateStarted) return;
+		updateStarted = true;
+		var nw = window.innerWidth;
+		var nh = window.innerHeight;
+		if ((w != nw) || (h != nh)) {
+			w = nw;
+			h = nh;
+			canvas.style.width = w+'px';
+			canvas.style.height = h+'px';
+			canvas.width = w;
+			canvas.height = h;
+		}
+		ctx.clearRect(0, 0, w, h);
+		var i, len = touches.length;
+		for (i=0; i<len; i++) {
+			var touch = touches[i];
+	    var px = touch.pageX;
+	    var py = touch.pageY;
+			ctx.beginPath();
+			ctx.arc(px, py, 20, 0, 2*Math.PI, true);
+			ctx.fillStyle = "rgba(0, 0, 200, 0.2)";
+			ctx.fill();
+			ctx.lineWidth = 2.0;
+			ctx.strokeStyle = "rgba(0, 0, 200, 0.8)";
+			ctx.stroke();
+	    console.log('drawn circle at ' + px +',' + py);
+		}
+		updateStarted = false;
+	}
+	function ol() {
+		canvas = document.getElementById('canvas');
+		ctx = canvas.getContext('2d');
+		timer = setInterval(update, 15);
+	canvas.addEventListener('touchend', function() {
+		ctx.clearRect(0, 0, w, h);
+	});
+	canvas.addEventListener('touchmove', function(event) {
+	  event.preventDefault();
+	  touches = event.touches;
+	});
+	canvas.addEventListener('touchstart', function(event) {
+	  console.log('start');
+	});
+	};
+	</script>
+	--> 
+</head>
+<body>
+	<h1>Costs Calculator Demo App</h1>
+
+	<p>Click the button to display the hour of the time right now.</p>
+
+	<button onclick="myFunction()">Try it</button>
+	<p id="demo"></p>
+	<p id="myTime"></p>
+
+	<div id="drop">
+		<div id="output"></div>
+	</div>
+	<div id="drop2">
+		<div id="output2"></div>
+	</div>
+	<div id="drop3">
+		<div id="output3"></div>
+	</div>
+	<div id="drop4">
+		<div id="output4"></div>
+	</div>
+
+	<div id="hours-1">
+		Time hours1: <span></span>
+	</div>
+
+	<div id="hours-2">
+		Time hours2: <span></span>
+	</div>
+	<div id="minutes-1">
+		Time minute1: <span></span>
+	</div>
+	<div id="minutes-2">
+		Time minute2: <span></span>
+	</div>
+	<div id="total-hours">
+		hour: <span></span>
+	</div>
+	<div id="total-minutes">
+		minute: <span></span>
+	</div>
+	<div id="timeSlot">
+		Time: <span></span>
+	</div>
+
+	<div draggable="true" class="dragable-item" data-title="Box 1" data-price="1">1</div>
+	<div draggable="true" class="dragable-item" data-title="Box 2" data-price="2">2</div>
+	<div draggable="true" class="dragable-item" data-title="Box 3" data-price="3">3</div>
+	<div draggable="true" class="dragable-item" data-title="Box 4" data-price="4">4</div>
+	<div draggable="true" class="dragable-item" data-title="Box 5" data-price="5">5</div>
+	<div draggable="true" class="dragable-item" data-title="Box 6" data-price="6">6</div>
+	<div draggable="true" class="dragable-item" data-title="Box 7" data-price="7">7</div>
+	<div draggable="true" class="dragable-item" data-title="Box 8" data-price="8">8</div>
+	<div draggable="true" class="dragable-item" data-title="Box 9" data-price="9">9</div>
+	<div draggable="true" class="dragable-item" data-title="Box 0" data-price="0">0</div>
+
+
+	<div style="clear:both;"></div>
+
+	</body>
+</html>
+

@@ -174,7 +174,7 @@ canvas.addEventListener('touchstart', function(event) {
 
 <button onclick="myFunction()">Try it</button>
 <p id="demo"></p>
-<p id="myTime"></p>
+<p id="currentHour"></p>
 
 <div id="drop">
 	<div id="output"></div>
@@ -245,22 +245,25 @@ canvas.addEventListener('touchstart', function(event) {
 //    }
 // }
 
-function myFunction() {
-    var d = new Date();
-    var n = d.getHours();
-    document.getElementById("demo").innerHTML = n;
-    document.getElementById("myTime").innerHTML = total_costs5;
-		   refresh_total_costs5(total_costs5);
+// function myFunction() {
+//     var d = new Date();
+//     var n = d.getHours();
+//     document.getElementById("demo").innerHTML = n;
+//     document.getElementById("currentHour").innerHTML = d;
 
-    if(n == total_costs5){
-    	console.log('correct');
-       document.getElementById("demo").innerHTML = 10;
 
-    } else {
-    	console.log('incorrect');
-       document.getElementById("demo").innerHTML = 6;
-}
-}
+//     if(n == total_costs5){
+//     	console.log('correct');
+//        document.getElementById("demo").innerHTML = 1;
+
+//     } else {
+//     	console.log('incorrect');
+//        document.getElementById("demo").innerHTML = 6;
+// 	}
+// 	myFunction();
+// 	refresh_total_costs5(total_costs5);
+
+// }
 // Callback function when cancelling the event
 function cancel(e) {
   if (e.preventDefault) {
@@ -314,6 +317,11 @@ $(document).ready(function() {
 		var total_costs6 = 0;
 		var time = 0;
 
+		var d = new Date();
+	    var n = d.getHours();
+	    document.getElementById("demo").innerHTML = n;
+	    document.getElementById("currentHour").innerHTML = d;
+
 		
 		refresh_total_costs1(total_costs1);
 
@@ -327,7 +335,11 @@ $(document).ready(function() {
 		var drop3 = document.getElementById('drop3');
 		var drop4 = document.getElementById('drop4');
 
+
 		var draggedItem = null;
+
+			console.log(n);
+			console.log(total_costs5);
 		
 		// Add the Event Listener to each draggable item		
 		$('.dragable-item').each(function(index){
@@ -351,6 +363,7 @@ $(document).ready(function() {
 
 		drop4.addEventListener('dragover', cancel);
 		drop4.addEventListener('dragenter', cancel);
+
 		
 		drop.addEventListener('drop', function (e) {
 
@@ -383,8 +396,23 @@ $(document).ready(function() {
 		   refresh_total_costs1(total_costs1);
 		   refresh_total_costs5(total_costs5);
 		   refresh_total_costs2(total_costs2);
-		refresh_time(time);
+		   refresh_time(time);
+
 			time = total_costs5;
+
+
+
+
+			if(n == total_costs5){
+	    		console.log('correct');
+	      		 document.getElementById("demo").innerHTML = 1;
+
+	    	} else {
+	    		console.log('incorrect');
+	       		document.getElementById("demo").innerHTML = 0;
+			}
+
+			// myFunction();
 		  return false;
 		});
 
@@ -414,12 +442,18 @@ $(document).ready(function() {
 		   refresh_total_costs5(total_costs5);
 		   		refresh_time(time);
 
-		   if(total_costs5 == n){
-		   		document.getElementById("result").innerHTML = 1;
 
-		   }
 		   refresh_total_costs5(total_costs5);
 		   refresh_total_costs3(total_costs3);
+
+		    if(n == total_costs5){
+		   		console.log('correct');
+	      		document.getElementById("demo").innerHTML = 1;
+
+	    	} else {
+	    		console.log('incorrect');
+	       		document.getElementById("demo").innerHTML = 0;
+			}
 
 
 		  return false;
@@ -453,7 +487,7 @@ $(document).ready(function() {
 		   }
 
 
-		   if(total_costs5 == n){
+		   if(n == total_costs5){
 		   		document.getElementById("result").innerHTML = 1;
 
 		   }
@@ -495,7 +529,24 @@ $(document).ready(function() {
 		   
 		  return false;
 		});
+
+
+
+			refresh_total_costs5(total_costs5);
+
+
+	
 });
+
+// function myFunction() {
+
+
+
+
+// 	myFunction();
+// 	refresh_total_costs5(total_costs5);
+
+// }
 			
 </script>
 
