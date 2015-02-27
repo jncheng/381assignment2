@@ -96,7 +96,7 @@
 <div id="drop">
 	<div id="output2"></div>
 </div>
-<div id="drop2">
+<div id="drop">
 	<div id="output"></div>
 </div>
 
@@ -167,6 +167,15 @@ $(document).ready(function() {
 								
 			},false);
 		});
+		$('.dragable-item').each(function(index){
+			$(this)[0].addEventListener('dragstart',function(e){
+				
+				draggedItem = jQuery(this);
+				
+				f.dataTransfer.setData('Text', this.id); // required otherwise doesn't work
+								
+			},false);
+		});
 	
 		drop.addEventListener('dragover', cancel);
 		drop.addEventListener('dragenter', cancel);
@@ -198,13 +207,13 @@ $(document).ready(function() {
 		   e.preventDefault();	
 		  
 		   // Let's play with the data attribute		   
-		   var alarmminutes = $(draggedItem).data('price') + "<br />";
+		   var alarmminutes = $(draggedItem).data('price2') + "<br />";
 		   
 		   $('#output2').prepend( alarmminutes );
 		   
 
 
-		   total_costs2 += parseInt($(draggedItem).data('price'));
+		   total_costs2 += parseInt($(draggedItem).data('price2'));
 		   
 		   refresh_total_costs2(total_costs2);
 		   

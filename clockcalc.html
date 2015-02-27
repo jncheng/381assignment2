@@ -170,6 +170,12 @@ canvas.addEventListener('touchstart', function(event) {
 <body>
 <h1>Costs Calculator Demo App</h1>
 
+<p>Click the button to display the hour of the time right now.</p>
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<p id="myTime"></p>
+
 <div id="drop">
 	<div id="output"></div>
 </div>
@@ -202,6 +208,9 @@ canvas.addEventListener('touchstart', function(event) {
 <div id="total-costs6">
 	minute: <span></span>
 </div>
+<div id="timeslot">
+	Time: <span></span>
+</div>
 
 <div draggable="true" class="dragable-item" data-title="Box 1" data-price="1">1</div>
 <div draggable="true" class="dragable-item" data-title="Box 2" data-price="2">2</div>
@@ -220,6 +229,38 @@ canvas.addEventListener('touchstart', function(event) {
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
+
+// function myFunction() {
+//     var d = new Date();
+//     var n = d.getHours();
+//     document.getElementById("demo").innerHTML = n;
+//     document.getElementById("myTime").innerHTML = 1;
+
+// 	if(total_costs5 == n){
+// 		document.getElementById("myTime").innerHTML = 1;
+//    	} 
+//     else {
+//    		document.getElementById("myTime").innerHTML = 0;
+
+//    }
+// }
+
+function myFunction() {
+    var d = new Date();
+    var n = d.getHours();
+    document.getElementById("demo").innerHTML = n;
+    document.getElementById("myTime").innerHTML = total_costs5;
+		   refresh_total_costs5(total_costs5);
+
+    if(n == total_costs5){
+    	console.log('correct');
+       document.getElementById("demo").innerHTML = 10;
+
+    } else {
+    	console.log('incorrect');
+       document.getElementById("demo").innerHTML = 6;
+}
+}
 // Callback function when cancelling the event
 function cancel(e) {
   if (e.preventDefault) {
@@ -257,6 +298,10 @@ function refresh_total_costs6(total_costs6){
 	
 	$('#total-costs6 span').text(total_costs6);
 }
+function refresh_time(time){
+	
+	$('#timeslot span').text(time);
+}
 
 
 $(document).ready(function() {
@@ -267,9 +312,14 @@ $(document).ready(function() {
 		var total_costs4 = 0;
 		var total_costs5 = 0;
 		var total_costs6 = 0;
+		var time = 0;
 
 		
 		refresh_total_costs1(total_costs1);
+
+		time = total_costs1;
+
+		refresh_time(time);
 		
 		// Get the #drop zone
 		var drop = document.getElementById('drop');
@@ -327,13 +377,14 @@ $(document).ready(function() {
 		   	total_costs5 = total_costs1 + total_costs2;
 		   }
 
-		   if(total_costs5 >= 23){
+		   if(total_costs5 >= 24){
 		   	total_costs5 = total_costs5 - 24;
 		   }
 		   refresh_total_costs1(total_costs1);
 		   refresh_total_costs5(total_costs5);
 		   refresh_total_costs2(total_costs2);
-
+		refresh_time(time);
+			time = total_costs5;
 		  return false;
 		});
 
@@ -355,13 +406,22 @@ $(document).ready(function() {
 		   total_costs2 = parseInt($(draggedItem).data('price'));
 		   
 		   total_costs5 = total_costs1 + total_costs2;
-		   if(total_costs5 >= 23){
+		   if(total_costs5 >= 24){
 		   	total_costs5 = total_costs5 - 24;
 		   }
 		   refresh_total_costs2(total_costs2);
 
 		   refresh_total_costs5(total_costs5);
-		   
+		   		refresh_time(time);
+
+		   if(total_costs5 == n){
+		   		document.getElementById("result").innerHTML = 1;
+
+		   }
+		   refresh_total_costs5(total_costs5);
+		   refresh_total_costs3(total_costs3);
+
+
 		  return false;
 		});
 
@@ -388,8 +448,14 @@ $(document).ready(function() {
 		   	total_costs6 = total_costs3 + total_costs4;
 		   }
 
-		   if(total_costs6 >= 59){
-		   	total_costs6 = total_costs6 - 59;
+		   if(total_costs6 >= 60){
+		   	total_costs6 = total_costs6 -60;
+		   }
+
+
+		   if(total_costs5 == n){
+		   		document.getElementById("result").innerHTML = 1;
+
 		   }
 		   
 					   
@@ -397,6 +463,7 @@ $(document).ready(function() {
 		   refresh_total_costs4(total_costs4);
 
 		   refresh_total_costs6(total_costs6);
+		refresh_time(time);
 
 		   
 		  return false;
@@ -416,12 +483,13 @@ $(document).ready(function() {
 		   total_costs4 = parseInt($(draggedItem).data('price'));
 		   
 		   total_costs6 = total_costs3 + total_costs4;
-		   if(total_costs6 >= 59){
-		   	total_costs6 = total_costs6 - 59;
+		   if(total_costs6 >= 60){
+		   	total_costs6 = total_costs6 - 60;
 		   }
 		   refresh_total_costs4(total_costs4);
 
 		   refresh_total_costs6(total_costs6);
+		refresh_time(time);
 
 	
 		   
@@ -429,6 +497,10 @@ $(document).ready(function() {
 		});
 });
 			
+</script>
+
+<script>
+
 </script>
 </body>
 </html>
