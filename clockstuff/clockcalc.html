@@ -113,6 +113,7 @@
 	</style>
 
 	<script type="text/javascript">
+var alarmOn = false;
 var canvas;
 var ctx;
 var w = 0;
@@ -340,7 +341,7 @@ $(document).ready(function() {
 
 			console.log(n);
 			console.log(total_costs5);
-		
+			console.log(alarmOn);
 		// Add the Event Listener to each draggable item		
 		$('.dragable-item').each(function(index){
 			$(this)[0].addEventListener('dragstart',function(e){
@@ -406,10 +407,14 @@ $(document).ready(function() {
 			if(n == total_costs5){
 	    		console.log('correct');
 	      		 document.getElementById("demo").innerHTML = 1;
+	      		 
+	    		alarmOn = true;
+
 
 	    	} else {
 	    		console.log('incorrect');
 	       		document.getElementById("demo").innerHTML = 0;
+	       		alarmOn = false;
 			}
 
 			// myFunction();
@@ -447,6 +452,7 @@ $(document).ready(function() {
 		   refresh_total_costs3(total_costs3);
 
 		    if(n == total_costs5){
+		    	alarmOn = true;
 		   		console.log('correct');
 	      		document.getElementById("demo").innerHTML = 1;
 
@@ -454,7 +460,7 @@ $(document).ready(function() {
 	    		console.log('incorrect');
 	       		document.getElementById("demo").innerHTML = 0;
 			}
-
+			console.log(alarmOn);
 
 		  return false;
 		});
@@ -469,13 +475,13 @@ $(document).ready(function() {
 		   
 
 		   $('#output3').prepend( html );
-
+		   total_costs6 = total_costs3 + total_costs4;
 
 		   if(parseInt($(draggedItem).data('price')) <= 6)
 		   {
 		   total_costs3 = parseInt($(draggedItem).data('price')) * 10;
 
-		   total_costs6 = total_costs3 + total_costs4;
+		  // total_costs6 = total_costs3 + total_costs4;
 		   }
 		   else{
 		   	total_costs6 = 0;
@@ -487,10 +493,16 @@ $(document).ready(function() {
 		   }
 
 
-		   if(n == total_costs5){
-		   		document.getElementById("result").innerHTML = 1;
+		   if(tatal_costs4 >= 5){
+		   	total_costs1 = 0;
+		   	total_costs2 = 0;
+		   	refresh_total_costs1(total_costs1);
+		   	refresh_total_costs2(total_costs2);
+		   	refresh_total_costs5(total_costs5);
 
 		   }
+
+
 		   
 					   
 		   refresh_total_costs3(total_costs3);
@@ -519,19 +531,28 @@ $(document).ready(function() {
 		   total_costs6 = total_costs3 + total_costs4;
 		   if(total_costs6 >= 60){
 		   	total_costs6 = total_costs6 - 60;
+		   } else {
+		   	total_costs4 = parseInt($(draggedItem).data('price'));
 		   }
 		   refresh_total_costs4(total_costs4);
 
 		   refresh_total_costs6(total_costs6);
 		refresh_time(time);
 
-	
+		   if(tatal_costs4 >= 5){
+		   	total_costs1 = 0;
+		   	total_costs2 = 0;
+		   	refresh_total_costs1(total_costs1);
+		   	refresh_total_costs2(total_costs2);
+		   	refresh_total_costs5(total_costs5);
+
+		   }
 		   
 		  return false;
 		});
 
 
-
+	    	console.log("demo");
 			refresh_total_costs5(total_costs5);
 
 
